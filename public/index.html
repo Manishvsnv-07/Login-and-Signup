@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Collection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/output.css">
+</head>
+
+<body class="font-m7 text-[11px]">
+    <div class="cont w-screen bg-white h-screen flex flex-col sm:flex-row items-center justify-center">
+
+        <form action="/login" method="post">
+            <div
+                class="left hover:cursor-pointer shadow-[0_20px_10px_rgba(0,0,0,0.3)] rounded-t-xl sm:rounded-l-xl hover:text-white hover:scale-[1.1] hover:rounded-3xl  gap-2 flex flex-col justify-center items-center bg-amber-200 w-[80vw] sm:w-[35vw] h-[42vh]">
+                <div class="text">
+                    <h1 class="text-2xl relative  top-0">Login</h1>
+                </div>
+                <div
+                    class="google h-[5vh] bg-white text-black rounded-[7px] px-2 flex items-center justify-center gap-2">
+                    <img src="imgs/logo.svg" class="w-5 h-5" alt="logo">
+                    <h2 class=" md:w-[17vw] hover:cursor-pointer overflow-hidden whitespace-nowrap text-ellipsis">
+                        Continue
+                        With Google</h2>
+                </div>
+
+                <div class="loginform hidden flex-col gap-2 justify-center items-center">
+                    <div class="email">
+                        <input type="text" name="email"
+                            class=" w-[40vw] sm:w-[19vw] h-[4vh] bg-white pl-2 text-black rounded-[7px]"
+                            placeholder="Enter Your Email">
+                    </div>
+                    <div class="password">
+                        <input type="password" name="password"
+                            class=" w-[40vw] sm:w-[19vw] h-[4vh] bg-white pl-2 text-black rounded-[7px]"
+                            placeholder="Enter your Password">
+                    </div>
+                    <div type="login" class="submit w-[5vw] bg-white rounded-[7px] hover:scale-[1.1] text-black px-3">
+                        <button class=" hover:cursor-pointer">Login</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <form action="/signup" method="post">
+            <div
+                class="right hover:cursor-pointer shadow-[0_20px_10px_rgba(0,0,0,0.3)] rounded-b-xl sm:rounded-r-xl hover:text-black hover:scale-[1.1] hover:rounded-3xl gap-2 bg-amber-950 w-[80vw] sm:w-[35vw] h-[42vh] flex flex-col text-white justify-center items-center">
+                <div class="text">
+                    <h1 class="text-2xl">Sign Up</h1>
+                </div>
+                <div class="name">
+                    <input type="text" name="name"
+                        class=" w-[40vw] sm:w-[19vw] h-[4vh] bg-white pl-2 text-black rounded-[7px]"
+                        placeholder="Enter Your Name">
+                </div>
+                <div class="email">
+                    <input type="text" name="email"
+                        class=" w-[40vw] sm:w-[19vw] h-[4vh] bg-white pl-2 text-black rounded-[7px]"
+                        placeholder="Enter Your Email">
+                </div>
+                <div class="password">
+                    <input type="password" name="password"
+                        class=" w-[40vw] sm:w-[19vw] h-[4vh] bg-white pl-2 text-black rounded-[7px]"
+                        placeholder="Create New Password">
+                </div>
+                <div type="signup" class="submit bg-white rounded-[7px] hover:scale-[1.1] text-black px-2">
+                    <button class=" hover:cursor-pointer">Sign Up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
