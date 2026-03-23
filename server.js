@@ -42,7 +42,11 @@ app.post("/signup", async (req, res) => {
         res.render("index", { title: "SignUp Done", img: "imgs/herocome.gif" })
 
     } catch (err) {
-        return res.render("index", { title: "something Wrong", img: "imgs/incorrect.gif" });
+        console.log("Signup Error:", err)
+        if (err.name === "ValidationError") {
+            return res.render("index", { title: "Incorrect", img: "imgs/incorrect.gif" });
+        }
+        res.send("Error Occurred!");
     }
 })
 
