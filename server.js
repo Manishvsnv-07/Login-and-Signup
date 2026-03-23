@@ -12,7 +12,7 @@ app.use(parser())
 app.use(express.urlencoded({ extended: true }))
 app.set("view engine", "ejs")
 mongoose.connect(process.env.MONGODB_URI).then(() => console.log("MongoDB Connected ✅"))
-.catch((err) => console.log("MongoDB Error ❌", err))
+    .catch((err) => console.log("MongoDB Error ❌", err))
 const schema = mongoose.Schema({
     name: { type: String, required: true },
     email: { type: String, required: true, match: /^[a-zA-Z0-9._%+-]+@gmail\.com$/ },
@@ -42,10 +42,7 @@ app.post("/signup", async (req, res) => {
         res.render("index", { title: "SignUp Done", img: "imgs/herocome.gif" })
 
     } catch (err) {
-        if (err.name === "ValidationError") {
-            return res.render("index", { title: "Incorrect", img: "imgs/incorrect.gif" });
-        }
-        res.send("Error Occured!");
+        return res.render("index", { title: "something Wrong", img: "imgs/incorrect.gif" });
     }
 })
 
