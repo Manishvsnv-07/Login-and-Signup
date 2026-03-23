@@ -10,8 +10,7 @@ app.use(express.static("public"))
 app.use(parser())
 app.use(express.urlencoded({ extended: true }))
 app.set("view engine","ejs")
-mongoose.connect("mongodb://manish_vsnv:godhanumanji@ac-znxcr9k-shard-00-00.yskz3k2.mongodb.net:27017,ac-znxcr9k-shard-00-01.yskz3k2.mongodb.net:27017,ac-znxcr9k-shard-00-02.yskz3k2.mongodb.net:27017/data?ssl=true&replicaSet=atlas-58a7tt-shard-0&authSource=admin&appName=Mycluster")
-
+mongoose.connect(process.env.MONGODB_URI)
 const schema = mongoose.Schema({
     name: { type: String, required: true },
     email: { type: String, required: true, match: /^[a-zA-Z0-9._%+-]+@gmail\.com$/ },
@@ -69,6 +68,4 @@ app.get("/read", (req, res) => {
     let verify = jwt.verify(req.cookies.token, "SecretCode");
     console.log(verify);
 })
-app.listen(port, () => {
-    console.log(`My Server At ${port}`);
-})
+app.listen(process.env.PORT || 3000)
